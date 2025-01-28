@@ -28,6 +28,12 @@ class Handler {
       this.speeds = [{ mode: 'S' }, { mode: 'AG' }, { mode: 'M', om: 1 }, { mode: 'M', om: 2 }, { mode: 'T' }];
     }
 
+    // 4000i
+    if (this.accessory.context.config.model == 'AC4236') {
+      // this.speeds = [{ mode: 'S' }, { mode: 'AS' }, { mode: 'AG' }, { mode: 'M', om: 1 }, { mode: 'M', om: 2 }, { mode: 'T', om: 't' }];
+      this.speeds = [{ mode: 'AG' }, { mode: 'M', om: 1 }, { mode: 'M', om: 2 }, { mode: 'T', om: 't' }];
+    }
+
     if (this.accessory.context.config.model == 'AC1715') {
       this.keyMaps = {
         pwr: 'D03-02',
@@ -104,6 +110,8 @@ class Handler {
   }
 
   speedsMinStep() {
+    logger.debug(`#speedsMinStep: 100 / ${this.speeds.length}`, this.accessory.displayName);
+
     return 100 / this.speeds.length;
   }
 
