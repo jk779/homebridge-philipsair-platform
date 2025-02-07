@@ -1,8 +1,8 @@
 {
   "name": "homebridge-philipsair-platform",
-  "version": "2.0.1",
+  "version": "2.0.2-alpha2",
   "description": "Homebridge plugin for philips air purifier and humidifier.",
-  "author": "seydx, we5, jk779 (https://github.com/jk779/homebridge-philipsair-platform)",
+  "author": "seydx, we5, jk779 (https://github.com/we5/homebridge-philipsair-platform)",
   "scripts": {
     "lint": "eslint --fix .",
     "watch": "npm run build && npm link && nodemon",
@@ -27,7 +27,7 @@
     "rimraf": "^3.0.2"
   },
   "bugs": {
-    "url": "https://github.com/jk779/homebridge-philipsair-platform/issues"
+    "url": "https://github.com/we5/homebridge-philipsair-platform/issues"
   },
   "engines": {
     "node": ">=14.18.0",
@@ -39,7 +39,7 @@
       "url": "https://github.com/sponsors/we5"
     }
   ],
-  "homepage": "https://github.com/jk779/homebridge-philipsair-platform#readme",
+  "homepage": "https://github.com/we5/homebridge-philipsair-platform#readme",
   "keywords": [
     "homebridge",
     "philips",
