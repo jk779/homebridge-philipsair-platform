@@ -42,7 +42,7 @@ class Handler {
         { ...baseParams, "D03102": 0 }, // Off, value is unique to off
         { ...baseParams, "D03102": 1, "D0310D": 1, "D03221": 4, "D03120": 1, "D01102": 5 }, // Sleep
         { ...baseParams, "D03102": 1, "D0310C": 0, "D0310D": 2, "D03120": 4, "D03221": 14 }, // Auto
-        { ...baseParams, "D03102": 1, "D0310C": 18, "D0310D": 18 } // Turbo
+        { ...baseParams, "D03120": 7, "D03221": 42, "D0312A": 0, "D0312B": 0, "D0312C": 4, "D03134": 1, "D03240": 0 } // Turbo
       ];
     }
 
