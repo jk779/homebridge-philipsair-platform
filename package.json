@@ -54,6 +54,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jk779/homebridge-philipsair-platform.git"
+    "url": "git+https://github.com/we5/homebridge-philipsair-platform.git"
   }
 }
