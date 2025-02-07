@@ -33,10 +33,17 @@ class Handler {
       this.speeds = [{ mode: 'AG' }, { mode: 'M', om: 1 }, { mode: 'M', om: 2 }, { mode: 'T', om: 't' }];
     }
 
-    // AC0830 (800)
+    // AC0830 (AC0830/10 - 800 Series)
+    //25% = off, 50% = sleep, 75% = auto, 10% = turbo
     if (this.accessory.context.config.model == 'AC0830') {
-      // this.speeds = [{ mode: 'S' }, { mode: 'AS' }, { mode: 'AG' }, { mode: 'M', om: 1 }, { mode: 'M', om: 2 }, { mode: 'T', om: 't' }];
-      this.speeds = [{ mode: 'AG' }, { mode: 'M', om: 1 }, { mode: 'M', om: 2 }, { mode: 'T', om: 't' }];
+      const baseParams = { "D0310A": 2, "D0310C": 17, "D0310D": 0, "D03120": 2, "D03221": 6, "D0312A": 1, "D0312B": 1, "D0312C": 4, "D03134": 1, "D03240": 0, "D05408": 4800, "D0540E": 4780 };
+
+      this.speeds = [
+        { ...baseParams, "D03102": 0 }, // Off, value is unique to off
+        { ...baseParams, "D03102": 1, "D0310D": 1, "D03221": 4, "D03120": 1, "D01102": 5 }, // Sleep
+        { ...baseParams, "D03102": 1, "D0310C": 0, "D0310D": 2, "D03120": 4, "D03221": 14 }, // Auto
+        { ...baseParams, "D03102": 1, "D0310C": 18, "D0310D": 18 } // Turbo
+      ];
     }
 
     if (this.accessory.context.config.model == 'AC1715') {
