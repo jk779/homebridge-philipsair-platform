@@ -28,8 +28,13 @@ class Handler {
       this.speeds = [{ mode: 'S' }, { mode: 'AG' }, { mode: 'M', om: 1 }, { mode: 'M', om: 2 }, { mode: 'T' }];
     }
 
-    // 4000i
+    // AC4236 (4000i)
     if (this.accessory.context.config.model == 'AC4236') {
+      this.speeds = [{ mode: 'AG' }, { mode: 'M', om: 1 }, { mode: 'M', om: 2 }, { mode: 'T', om: 't' }];
+    }
+
+    // AC0830 (800)
+    if (this.accessory.context.config.model == 'AC0830') {
       // this.speeds = [{ mode: 'S' }, { mode: 'AS' }, { mode: 'AG' }, { mode: 'M', om: 1 }, { mode: 'M', om: 2 }, { mode: 'T', om: 't' }];
       this.speeds = [{ mode: 'AG' }, { mode: 'M', om: 1 }, { mode: 'M', om: 2 }, { mode: 'T', om: 't' }];
     }
